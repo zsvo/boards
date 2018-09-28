@@ -5,6 +5,7 @@ description: Board configuration defs
 config_schema:
   - ["pins", "o", {title: "Pins layout"}]
   - ["pins.led", "i", -1, {title: "LED GPIO pin"}]
+  - ["pins.led_active_high", "b", true, {title: "True if LED is on when output is high (1)"}]
   - ["pins.button", "i", -1, {title: "Button GPIO pin"}]
   - ["pins.button_pull_up", "b", true, {title: "True if button is pulled up when inactive"}]
 
