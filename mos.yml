@@ -31,6 +31,7 @@ conds:
     apply:
       config_schema:
         - ["board.led1.pin", 2]
+        - ["board.led1.active_high", false]
         - ["board.btn1.pin", 0]
         - ["board.btn1.pull_up", true]
         - ["provision.btn.pin", 0]
