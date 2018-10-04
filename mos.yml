@@ -59,6 +59,7 @@ conds:
         - ["board.led1.pin", 0x1e]  # PB14
         - ["board.btn1.pin", 0x2d]  # PC13
         - ["provision.btn.pin", 0x2d]  # PC13
+        - ["provision.btn.pull_up", true]
         - ["debug.stdout_uart", 1]
         - ["debug.stderr_uart", 1]
         - ["rpc.uart.uart_no", 1]
