@@ -37,18 +37,24 @@ conds:
         - ["provision.btn.pin", 0]
         - ["provision.btn.pull_up", true]
 
-  - when: mos.platform == "cc3200"
+  - when: mos.platform == "cc3200"  # CC3200-LAUNCHXL
     apply:
       config_schema:
-        - ["board.led1.pin", 64]
-        - ["board.btn1.pin", 15]       # SW2 on LaunchXL
+        - ["board.led1.pin", 64]    # D7 (red)
+        - ["board.led2.pin", 1]     # D6 (yellow)
+        - ["board.led3.pin", 2]     # D5 (green)
+        - ["board.btn1.pin", 15]    # SW2
+        - ["board.btn2.pin", 4]     # SW3
         - ["provision.btn.pin", 4]  # SW3
 
-  - when: mos.platform == "cc3220"
+  - when: mos.platform == "cc3220"  # CC3220F-LAUNCHXL
     apply:
       config_schema:
-        - ["board.led1.pin", 64]
-        - ["board.btn1.pin", 15]       # SW2 on LaunchXL
+        - ["board.led1.pin", 64]    # D7 (red)
+        - ["board.led2.pin", 1]     # D6 (yellow)
+        - ["board.led3.pin", 2]     # D5 (green)
+        - ["board.btn1.pin", 15]    # SW2
+        - ["board.btn2.pin", 4]     # SW3
         - ["provision.btn.pin", 4]  # SW3
 
   - when: build_vars.BOARD == "B-L475E-IOT01A"
@@ -56,8 +62,10 @@ conds:
       libs:
         - origin: https://github.com/mongoose-os-libs/wifi-ism43xxx
       config_schema:
-        - ["board.led1.pin", 0x1e]  # PB14
-        - ["board.btn1.pin", 0x2d]  # PC13
+        - ["board.led1.pin", 0x05]     # PA5 (LD1, green)
+        - ["board.led2.pin", 0x1e]     # PB14 (LD2, green)
+        - ["board.led3.pin", 0x29]     # PC9 (1 = LD3 (yellow), 0 = LD4 (blue))
+        - ["board.btn1.pin", 0x2d]     # PC13
         - ["provision.btn.pin", 0x2d]  # PC13
         - ["provision.btn.pull_up", true]
         - ["debug.stdout_uart", 1]
@@ -110,8 +118,8 @@ conds:
       libs:
         - origin: https://github.com/mongoose-os-libs/ethernet
       config_schema:
-        - ["board.led1.pin", 0x81]  # PI1
-        - ["board.btn1.pin", 0x8b]  # PI11
+        - ["board.led1.pin", 0x81]     # PI1 (green)
+        - ["board.btn1.pin", 0x8b]     # PI11
         - ["provision.btn.pin", 0x8b]  # PI11
         - ["debug.stdout_uart", 1]
         - ["debug.stderr_uart", 1]
@@ -166,10 +174,10 @@ conds:
       libs:
         - origin: https://github.com/mongoose-os-libs/ethernet
       config_schema:
-        - ["board.led1.pin", 0x10]  # PB0 (LD1, green)
-        - ["board.led2.pin", 0x17]  # PB7 (LD2, blue)
-        - ["board.led3.pin", 0x1e]  # PB14 (LD3, red)
-        - ["board.btn1.pin", 0x2d]  # PC13
+        - ["board.led1.pin", 0x10]     # PB0 (LD1, green)
+        - ["board.led2.pin", 0x17]     # PB7 (LD2, blue)
+        - ["board.led3.pin", 0x1e]     # PB14 (LD3, red)
+        - ["board.btn1.pin", 0x2d]     # PC13
         - ["provision.btn.pin", 0x2d]  # PC13
         - ["debug.stdout_uart", 3]
         - ["debug.stderr_uart", 3]
