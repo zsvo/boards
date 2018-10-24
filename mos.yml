@@ -27,6 +27,20 @@ conds:
         - ["provision.btn.pin", 0]
         - ["provision.btn.pull_up", true]
 
+  # https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware
+  - when: build_vars.BOARD == "ESP32-EVB"
+    apply:
+      libs:
+        - origin: https://github.com/mongoose-os-libs/ethernet
+      config_schema:
+        - ["eth.enable", true]
+        - ["board.led1.pin", 32]  # REL1
+        - ["board.led2.pin", 33]  # REL2
+        - ["board.btn1.pin", 34]  # BUT1
+        - ["board.btn1.pull_up", true]
+        - ["provision.btn.pin", 34]
+        - ["provision.btn.pull_up", true]
+
   - when: mos.platform == "esp8266"
     apply:
       config_schema:
