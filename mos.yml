@@ -26,6 +26,7 @@ conds:
         - ["board.btn1.pull_up", true]
         - ["provision.btn.pin", 0]
         - ["provision.btn.pull_up", true]
+        - ["board.led1.pin", 22]
 
   # https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware
   - when: build_vars.BOARD == "ESP32-EVB"
@@ -50,6 +51,8 @@ conds:
         - ["board.btn1.pull_up", true]
         - ["provision.btn.pin", 0]
         - ["provision.btn.pull_up", true]
+        - ["provision.led.pin", 2]
+        - ["provision.led.active_high", false]
 
   - when: build_vars.BOARD == "esp8266-1M"
     apply:
@@ -74,6 +77,7 @@ conds:
         - ["board.btn1.pin", 15]    # SW2
         - ["board.btn2.pin", 4]     # SW3
         - ["provision.btn.pin", 4]  # SW3
+        - ["provision.led.pin", 2]  # D5 (green)
 
   - when: mos.platform == "cc3220"  # CC3220F-LAUNCHXL
     apply:
@@ -84,6 +88,7 @@ conds:
         - ["board.btn1.pin", 15]    # SW2
         - ["board.btn2.pin", 4]     # SW3
         - ["provision.btn.pin", 4]  # SW3
+        - ["provision.led.pin", 2]  # D5 (green)
 
   - when: build_vars.BOARD == "B-L475E-IOT01A"
     apply:
@@ -96,6 +101,7 @@ conds:
         - ["board.btn1.pin", 0x2d]     # PC13
         - ["provision.btn.pin", 0x2d]  # PC13
         - ["provision.btn.pull_up", true]
+        - ["provision.led.pin", 0x1e]  # PC13 (LD2, green)
         - ["debug.stdout_uart", 1]
         - ["debug.stderr_uart", 1]
         - ["rpc.uart.uart_no", 1]
@@ -147,6 +153,7 @@ conds:
         - ["board.led1.pin", 0x81]     # PI1 (green)
         - ["board.btn1.pin", 0x8b]     # PI11
         - ["provision.btn.pin", 0x8b]  # PI11
+        - ["provision.led.pin", 0x81]  # PI1
         - ["debug.stdout_uart", 1]
         - ["debug.stderr_uart", 1]
         - ["rpc.uart.uart_no", 1]
@@ -198,11 +205,12 @@ conds:
       libs:
         - origin: https://github.com/mongoose-os-libs/ethernet
       config_schema:
-        - ["board.led1.pin", 0x10]     # PB0 (LD1, green)
+        - ["board.led1.pin", 0x1e]     # PB14 (LD3, red)
         - ["board.led2.pin", 0x17]     # PB7 (LD2, blue)
-        - ["board.led3.pin", 0x1e]     # PB14 (LD3, red)
+        - ["board.led3.pin", 0x10]     # PB0 (LD1, green)
         - ["board.btn1.pin", 0x2d]     # PC13
         - ["provision.btn.pin", 0x2d]  # PC13
+        - ["provision.led.pin", 0x17]  # PB7 (LD2, blue)
         - ["debug.stdout_uart", 3]
         - ["debug.stderr_uart", 3]
         - ["rpc.uart.uart_no", 3]
