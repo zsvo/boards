@@ -37,6 +37,20 @@ conds:
         - ["provision.btn.pin", 0]
         - ["provision.btn.pull_up", true]
 
+  - when: build_vars.BOARD == "esp8266-1M"
+    apply:
+      build_vars:
+        FLASH_SIZE: 1048576
+      config_schema:
+        - ["mjs.generate_jsc", false]
+
+  - when: build_vars.BOARD == "esp8266-2M"
+    apply:
+      build_vars:
+        FLASH_SIZE: 1048576
+      config_schema:
+        - ["mjs.generate_jsc", false]
+
   - when: mos.platform == "cc3200"  # CC3200-LAUNCHXL
     apply:
       config_schema:
