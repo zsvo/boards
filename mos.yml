@@ -20,6 +20,8 @@ config_schema:
 conds:
   - when: mos.platform == "esp32"
     apply:
+      libs:
+        - origin: https://github.com/mongoose-os-libs/wifi
       config_schema:
         - ["board.led1.pin", 21]
         - ["board.btn1.pin", 0]
@@ -44,6 +46,8 @@ conds:
 
   - when: mos.platform == "esp8266"
     apply:
+      libs:
+        - origin: https://github.com/mongoose-os-libs/wifi
       config_schema:
         - ["board.led1.pin", 2]
         - ["board.led1.active_high", false]
@@ -70,6 +74,8 @@ conds:
 
   - when: mos.platform == "cc3200"  # CC3200-LAUNCHXL
     apply:
+      libs:
+        - origin: https://github.com/mongoose-os-libs/wifi
       config_schema:
         - ["board.led1.pin", 64]    # D7 (red)
         - ["board.led2.pin", 1]     # D6 (yellow)
@@ -81,6 +87,8 @@ conds:
 
   - when: mos.platform == "cc3220"  # CC3220F-LAUNCHXL
     apply:
+      libs:
+        - origin: https://github.com/mongoose-os-libs/wifi
       config_schema:
         - ["board.led1.pin", 64]    # D7 (red)
         - ["board.led2.pin", 1]     # D6 (yellow)
