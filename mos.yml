@@ -68,7 +68,7 @@ conds:
   - when: build_vars.BOARD == "esp8266-2M"
     apply:
       build_vars:
-        FLASH_SIZE: 1048576
+        FLASH_SIZE: 2097152
       config_schema:
         - ["mjs.generate_jsc", false]
 
