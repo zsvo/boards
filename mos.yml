@@ -23,12 +23,11 @@ conds:
       libs:
         - origin: https://github.com/mongoose-os-libs/wifi
       config_schema:
-        - ["board.led1.pin", 21]
+        - ["board.led1.pin", 13]
         - ["board.btn1.pin", 0]
         - ["board.btn1.pull_up", true]
         - ["provision.btn.pin", 0]
         - ["provision.btn.pull_up", true]
-        - ["board.led1.pin", 22]
 
   # https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware
   - when: build_vars.BOARD == "ESP32-EVB"
