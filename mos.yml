@@ -111,6 +111,8 @@ conds:
         - ["provision.led.pin", 0x1e]  # PC13 (LD2, green)
         - ["debug.stdout_uart", 1]
         - ["debug.stderr_uart", 1]
+        - ["i2c.sda_gpio", 0x1b]       # PB11 (internal I2C bus, where the sensors are)
+        - ["i2c.scl_gpio", 0x1a]       # PB10
         - ["rpc.uart.uart_no", 1]
         #                                                    PC11.6                PC12.6                PC10.6
         - ["wifi.ism43xxx.spi", '{"unit_no": 3, "miso_gpio": 0x6002b, "mosi_gpio": 0x6002c, "sclk_gpio": 0x6002a}']
