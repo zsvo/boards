@@ -113,6 +113,8 @@ conds:
         - ["debug.stderr_uart", 1]
         - ["i2c.sda_gpio", 0x1b]       # PB11 (internal I2C bus, where the sensors are)
         - ["i2c.scl_gpio", 0x1a]       # PB10
+        - ["i2c1.sda_gpio", 0x19]      # PB9 (external I2C bus, exposed on the Arduino connector)
+        - ["i2c1.scl_gpio", 0x18]      # PB8
         - ["rpc.uart.uart_no", 1]
         #                                                    PC11.6                PC12.6                PC10.6
         - ["wifi.ism43xxx.spi", '{"unit_no": 3, "miso_gpio": 0x6002b, "mosi_gpio": 0x6002c, "sclk_gpio": 0x6002a}']
