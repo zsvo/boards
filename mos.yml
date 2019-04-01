@@ -131,6 +131,7 @@ conds:
         MGOS_BL_BIN: "$(MGOS_PLATFORM_PATH)/bin/bootloader-B-L475E-IOT01A.bin"
         FLASH_BL_SIZE: 0x10000
         FLASH_BL_CFG_SIZE: 0
+        FREERTOS_PORT: GCC/ARM_CM4F
         MGOS_ROOT_DEVTAB: >
           sysf0   stm32flash {} |
           extf0   spi_flash  {"cs": 0, "freq": 20000000,
@@ -176,6 +177,7 @@ conds:
         MGOS_BL_BIN: "$(MGOS_PLATFORM_PATH)/bin/bootloader-DISCO-F746NG.bin"
         FLASH_BL_SIZE: 0x10000
         FLASH_BL_CFG_SIZE: 0
+        FREERTOS_PORT: GCC/ARM_CM7/r0p1
         MGOS_ROOT_DEVTAB: >
           sysf0  stm32flash {} |
           extf0  spi_flash  {"cs": 0, "freq": 20000000,
@@ -232,6 +234,7 @@ conds:
         MGOS_DEBUG_UART: 3
         FLASH_BL_SIZE: 0
         FLASH_BL_CFG_SIZE: 0
+        FREERTOS_PORT: GCC/ARM_CM7/r0p1
         MGOS_ROOT_DEVTAB: >
           fs0 stm32flash {"offset": 0x8000, "size": 0x10000, "ese": true}
         MGOS_ROOT_FS_TYPE: SPIFFS
@@ -301,6 +304,7 @@ conds:
         MGOS_BL_BIN: "$(MGOS_PLATFORM_PATH)/bin/bootloader-Electron.bin"
         FLASH_BL_SIZE: 0x10000
         FLASH_BL_CFG_SIZE: 0
+        FREERTOS_PORT: GCC/ARM_CM3
         MGOS_ROOT_DEVTAB: >
           sysf0   stm32flash {} |
           extf0   spi_flash  {"cs": 0, "freq": 20000000,
