@@ -100,6 +100,7 @@ conds:
   - when: build_vars.BOARD == "B-L475E-IOT01A"
     apply:
       libs:
+        - origin: https://github.com/mongoose-os-libs/freertos
         - origin: https://github.com/mongoose-os-libs/wifi-ism43xxx
       config_schema:
         - ["board.led1.pin", 0x05]     # PA5 (LD1, green)
@@ -160,6 +161,7 @@ conds:
     apply:
       libs:
         - origin: https://github.com/mongoose-os-libs/ethernet
+        - origin: https://github.com/mongoose-os-libs/freertos
       config_schema:
         - ["board.led1.pin", 0x81]     # PI1 (green)
         - ["board.btn1.pin", 0x8b]     # PI11
@@ -216,6 +218,7 @@ conds:
     apply:
       libs:
         - origin: https://github.com/mongoose-os-libs/ethernet
+        - origin: https://github.com/mongoose-os-libs/freertos
       config_schema:
         - ["board.led1.pin", 0x1e]     # PB14 (LD3, red)
         - ["board.led2.pin", 0x17]     # PB7 (LD2, blue)
@@ -257,6 +260,7 @@ conds:
   - when: build_vars.BOARD == "Electron"
     apply:
       libs:
+        - origin: https://github.com/mongoose-os-libs/freertos
         - origin: https://github.com/mongoose-os-libs/pppos
       config_schema:
         - ["board.led1.pin", 0x01]     # PA1 (RGB, red)
