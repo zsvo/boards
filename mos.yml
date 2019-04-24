@@ -118,6 +118,10 @@ conds:
         MGOS_BL_BIN: "$(MGOS_PLATFORM_PATH)/bin/bootloader.bin"
         MGOS_ROOT_FS_TYPE: LFS
         MGOS_ROOT_FS_SIZE: 0x40000
+        # 128K SRAM is the baseline present in all variants of the chip.
+        # There may be much more but there's no way to tell upfront.
+        # Override this if you know your chip has more SRAM.
+        RS14100_SRAM_SIZE: 131072
 
   - when: build_vars.BOARD == "EVK1.3"
     apply:
