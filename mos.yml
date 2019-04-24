@@ -118,6 +118,16 @@ conds:
         MGOS_ROOT_FS_TYPE: LFS
         MGOS_ROOT_FS_SIZE: 0x40000
 
+  - when: build_vars.BOARD == "EVK1.3"
+    apply:
+      config_schema:
+        - ["board.led1.pin", 0x100]             # ULP0 (TRI LED, green)
+        - ["board.led1.active_high", false]
+        - ["board.led2.pin", 0x102]             # ULP2 (TRI LED, blue)
+        - ["board.led2.active_high", false]
+        - ["provision.led.pin", 0x102]          # ULP2 (TRI LED, blue)
+        - ["provision.led.active_high", false]
+
   - when: build_vars.BOARD == "B-L475E-IOT01A"
     apply:
       libs:
