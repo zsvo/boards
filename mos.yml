@@ -102,6 +102,7 @@ conds:
       libs:
         - origin: https://github.com/mongoose-os-libs/wifi
       build_vars:
+        FREERTOS_PORT: GCC/ARM_CM4F
         MGOS_ROOT_DEVTAB: >
           qspi0  rsi1x_flash {"cs": 0} |
           boot   part {"dev": "qspi0", "offset":  0x12000, "size":  0xc000} |
